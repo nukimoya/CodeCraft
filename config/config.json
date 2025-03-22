@@ -1,0 +1,24 @@
+{
+    "development": {
+      "username": "postgres",
+      "password": "password",
+      "database": "gamified",
+      "host": "localhost",
+      "dialect": "postgres"
+    },
+    "test": {
+      "username": "postgres",
+      "password": "password",
+      "database": "gamified",
+      "host": "127.0.0.1",
+      "dialect": "postgres"
+    },
+    "production": {
+      "username": "postgres",
+      "password": "password",
+      "database": "gamified",
+      "host": "127.0.0.1",
+      "dialect": "postgres"
+    }
+  }
+  

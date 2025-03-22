@@ -1,0 +1,4 @@
+.env
+pg_schema.sql
+deploy.js
+node_modules/
