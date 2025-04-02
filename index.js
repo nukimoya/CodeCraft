@@ -37,7 +37,7 @@ app.use("*", (req, res) => {
 
 
 sequelize
-  .sync({ alter: true }) // WARNING: This will drop and recreate all tables
+  .sync({ alter: true })
   .then(() => {
     console.log('Database & tables created/updated!');
   })
