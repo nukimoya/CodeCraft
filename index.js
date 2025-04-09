@@ -19,7 +19,10 @@ app.use(cookieParser());
 setupAssociations();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: 'https://code-craft-frontend.vercel.app',
+  // credentials: true, // only if you're sending cookies
+}));
 app.use(morgan('combined'));
 app.use("/", router);
 
