@@ -12,6 +12,12 @@ dotenv.config();
 
 
 const app = express();
+app.use(cors({
+  origin: 'https://code-craft-frontend.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+app.options('*', cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -19,13 +25,6 @@ app.use(cookieParser());
 // Setup associations
 setupAssociations();
 
-// Middleware
-app.use(cors({
-  origin: 'https://code-craft-frontend.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-}));
-app.options('*', cors());
 app.use(morgan('combined'));
 app.use("/", router);
 
