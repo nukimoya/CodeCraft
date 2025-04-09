@@ -23,6 +23,10 @@ setupAssociations();
 app.use(morgan('combined'));
 app.use("/", router);
 
+app.post("/test", (req, res) => {
+  res.status(200);
+  console.log("Working fine")
+})
 
 app.use("*", (req, res) => {
     res.status(404).json({ error: "No Page" });
