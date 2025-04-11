@@ -13,7 +13,7 @@ dotenv.config();
 
 // CORS middleware - add this first
 app.use(cors({
-  origin: 'https://codecraft-production.up.railway.app',
+  origin: 'https://code-craft-frontend.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
