@@ -2,7 +2,7 @@ require("dotenv").config(); // Load environment variables
 
 const { Sequelize } = require("sequelize");
 
-const databaseUrl = process.env.DATABASE_URL;
+const databaseUrl = process.env.MASTER_DB;
 
 // Check if DATABASE_URL exists
 if (!databaseUrl) {
@@ -25,7 +25,7 @@ const sequelize = new Sequelize(databaseUrl, {
 (async () => {
   try {
     await sequelize.authenticate();
-    console.log('Connected to the database!');
+    console.log('Connected to the online database!');
   } catch (error) {
     console.error('Failed to connect:', error);
   }
