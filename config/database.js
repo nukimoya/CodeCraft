@@ -25,7 +25,7 @@ const sequelize = new Sequelize(databaseUrl, {
 (async () => {
   try {
     await sequelize.authenticate();
-    console.log('Connected to the online database!');
+    console.log('Connected to the railway online database!');
   } catch (error) {
     console.error('Failed to connect:', error);
   }
