@@ -1,4 +1,4 @@
-// const express = require('express');
+
 // const cors = require('cors');
 // const morgan = require('morgan');
 // const cookieParser = require('cookie-parser');
@@ -63,6 +63,7 @@
 
 const express = require('express');
 const app = express();
+const sequelize = require('./config/database'); 
 
 // Basic CORS setup
 app.use((req, res, next) => {
@@ -80,6 +81,14 @@ app.use((req, res, next) => {
 app.get('/test', (req, res) => {
   return res.json({ message: 'Test endpoint working' });
 });
+
+// Database sync
+sequelize
+  .sync({ alter: true })
+  .then(() => {
+    console.log('Database & tables created/updated!');
+  })
+  .catch(err => console.log('Error syncing database:', err));
 
 // Export for Vercel
 module.exports = app;
