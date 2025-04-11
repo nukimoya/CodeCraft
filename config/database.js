@@ -2,7 +2,7 @@ require("dotenv").config(); // Load environment variables
 
 const { Sequelize } = require("sequelize");
 
-const databaseUrl = process.env.DATABASE_URL || "postgresql://postgres:PiQVrCVvNvdpTApMLYtcuiizHLSjpuSU@caboose.proxy.rlwy.net:16042/railway";
+const databaseUrl = process.env.DATABASE_URL;
 
 // Check if DATABASE_URL exists
 if (!databaseUrl) {
