@@ -1,6 +1,7 @@
-require("dotenv").config(); // Load environment variables
-
 const { Sequelize } = require("sequelize");
+
+
+require("dotenv").config(); // Load environment variables
 
 const sequelize = new Sequelize(
   process.env.DB_NAME,
@@ -9,9 +10,16 @@ const sequelize = new Sequelize(
   {
     host: process.env.DB_HOST,
     dialect: 'postgres',
-    port: process.env.DB_PORT
+    port: process.env.DB_PORT  || 16042,
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      }
+    }
   }
 );
+
 
 // Self-invoking function to test connection
 (async () => {
