@@ -90,5 +90,12 @@ sequelize
   })
   .catch(err => console.log('Error syncing database:', err));
 
+  // In your backend code
+const PORT = process.env.PORT || 5005; // Default to 5005 if no environment variable is set
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
+
 // Export for Vercel
 module.exports = app;
