@@ -2,3 +2,4 @@
 pg_schema.sql
 deploy.js
 node_modules/
+config/config.json
